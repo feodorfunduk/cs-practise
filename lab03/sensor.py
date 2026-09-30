@@ -1,4 +1,4 @@
-porog = int(input('Введите порог: '))
+porog = float(input('Введите порог: '))
 n = int(input('Введите количество записей: '))
 q = []
 errors = 0
