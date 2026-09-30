@@ -13,3 +13,6 @@ for i in range(n):
         q.append(float(t))
     else:
         q.append(float(t))
+
+print(f'Сколько записей пришло всего: {n}\nсколько среди них ошибок: {errors}\nсколько превышений: {prev}\nмаксимальное показание: {max(q):.1f}\nсреднее показание: {sum(q) / len(q):.1f}')
+
