@@ -31,11 +31,11 @@ def total_minutes(rows, kind):
     for i in rows:
         if i['тип'] == kind:
             try:
-                res += round(float(i['минуты']), 1)
+                res += float(i['минуты'])
             except Exception as e:
                 continue
             
-    return res
+    return round(res, 1)
 
 
 def to_csv(counts):
