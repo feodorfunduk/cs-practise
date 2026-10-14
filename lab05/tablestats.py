@@ -1,9 +1,16 @@
 def read_rows(lines):
     res = []
-    for i in list(lines)[1:]:
-        if len(i.split(',')) == 3:
-            res.append({'дата': i.split(',')[0], 'тип': i.split(',')[1],  'минуты': i.split(',')[2]})
-        
+    header = None
+    for line in lines:
+        line = line.strip() 
+        if not line:
+            continue
+
+        parts = [s.strip() for s in line.split(',')]
+        if header is None:
+            header = parts
+        elif len(parts) == len(header):
+            res.append(dict(zip(header, parts))) 
     return res
 
 
@@ -26,7 +33,7 @@ def total_minutes(rows, kind):
             try:
                 res += round(float(i['минуты']), 1)
             except Exception as e:
-                print(e)
+                continue
             
     return res
 
