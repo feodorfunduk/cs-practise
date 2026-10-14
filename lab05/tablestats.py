@@ -33,7 +33,7 @@ def total_minutes(rows, kind):
             try:
                 res += float(i['минуты'])
             except Exception as e:
-                continue
+                pass
             
     return round(res, 1)
 
