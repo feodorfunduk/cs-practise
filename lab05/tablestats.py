@@ -2,7 +2,7 @@ def read_rows(lines):
     res = []
     for i in list(lines)[1:]:
         if len(i.split(',')) == 3:
-            res.append({'дата': i.split(',')[0], 'тип': i.split(',')[1],  'минуты': float(i.split(',')[2])})
+            res.append({'дата': i.split(',')[0], 'тип': i.split(',')[1],  'минуты': round(float(i.split(',')[2]), 1)})
         
     return res
 
@@ -33,4 +33,5 @@ def to_csv(counts):
         res += f'{k},{counts[k]}\n'
     
     return res
+
 
