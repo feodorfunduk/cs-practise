@@ -31,7 +31,7 @@ def total_minutes(rows, kind):
     for i in rows:
         if i['тип'] == kind:
             try:
-                res += float(i['минуты'])
+                res += float(i['минуты'].replace(",", "."))
             except Exception as e:
                 pass
             
