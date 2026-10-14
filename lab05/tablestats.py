@@ -2,7 +2,7 @@ def read_rows(lines):
     res = []
     for i in list(lines)[1:]:
         if len(i.split(',')) == 3:
-            res.append({'дата': i.split(',')[0], 'тип': i.split(',')[1],  'минуты': round(float(i.split(',')[2]), 1)})
+            res.append({'дата': i.split(',')[0], 'тип': i.split(',')[1],  'минуты': i.split(',')[2]})
         
     return res
 
@@ -20,9 +20,13 @@ def count_types(rows):
             
 def total_minutes(rows, kind):
     res = 0.0
+    
     for i in rows:
         if i['тип'] == kind:
-            res += i['минуты']
+            try:
+                res += round(float(i['минуты']), 1)
+            except Exception as e:
+                print(e)
             
     return res
 
@@ -33,5 +37,4 @@ def to_csv(counts):
         res += f'{k},{counts[k]}\n'
     
     return res
-
 
