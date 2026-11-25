@@ -39,3 +39,8 @@ def tensor_channel_mean(tensor):
     return np.array(tensor, dtype=float).mean(axis=-1).tolist()
 
 
+def point_distance(first, second):
+    distance = np.linalg.norm(
+        np.array(first, dtype=float) - np.array(second, dtype=float)
+    )
+    return round(float(distance), 6)
