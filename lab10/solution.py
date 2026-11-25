@@ -23,3 +23,8 @@ def matrix_vector_product(matrix, vector):
 def matrix_multiply(left, right):
     return (np.array(left) @ np.array(right)).tolist()
 
+
+def transpose_matrix(matrix):
+    return np.array(matrix).T.tolist()
+
+
