@@ -35,3 +35,7 @@ def solve_system(matrix, vector):
     return np.round(solution, 6).tolist()
 
 
+def tensor_channel_mean(tensor):
+    return np.array(tensor, dtype=float).mean(axis=-1).tolist()
+
+
