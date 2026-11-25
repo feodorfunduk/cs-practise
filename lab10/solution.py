@@ -20,3 +20,6 @@ def matrix_vector_product(matrix, vector):
     return (np.array(matrix) @ np.array(vector)).tolist()
 
 
+def matrix_multiply(left, right):
+    return (np.array(left) @ np.array(right)).tolist()
+
