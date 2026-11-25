@@ -16,3 +16,7 @@ def replace_rectangle(matrix, row_start, row_stop, column_start, column_stop, va
     return arr.tolist()
 
 
+def matrix_vector_product(matrix, vector):
+    return (np.array(matrix) @ np.array(vector)).tolist()
+
+
